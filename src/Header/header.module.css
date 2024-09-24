@@ -1,0 +1,6 @@
+.headernav ul li a{
+    font-size: 14px;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    color: #000;
+}
