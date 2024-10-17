@@ -9,7 +9,7 @@ import $ from "jquery";
 const EditDeleteEnquiry = () => {
   const [data, setData] = useState([]);
   useEffect(()=>{
-    axios.get("http://localhost:4000/enquiry/")
+    axios.get("https://project1server-3.onrender.com/enquiry/")
     .then((res)=>{
       setData(res.data);
     })
@@ -23,7 +23,7 @@ const EditDeleteEnquiry = () => {
     });    
   })
   const deleteEnquiry = (eid)=>{
-    axios.delete(`http://localhost:4000/enquiry/${eid}`)
+    axios.delete(`https://project1server-3.onrender.com/enquiry/${eid}`)
     .then((res)=>{
       alert("Enquiry deleted succ...")
     })
