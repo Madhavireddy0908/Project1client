@@ -9,7 +9,7 @@ const TreatmentDetails = () => {
   const {tname} = useParams();
   useEffect(()=>{
       axios
-      .get(`http://localhost:4000/treatment/${tname}`)
+      .get(`https://project1server-3.onrender.com/treatment/${tname}`)
       .then((res)=>{
         setTreat(res.data.tdesc);
       })
@@ -17,7 +17,7 @@ const TreatmentDetails = () => {
         console.log(err);
       })
       axios
-      .get(`http://localhost:4000/doctor/${tname}`)
+      .get(`https://project1server-3.onrender.com/doctor/${tname}`)
       .then((res)=>{
         setDoc(res.data);
       })
