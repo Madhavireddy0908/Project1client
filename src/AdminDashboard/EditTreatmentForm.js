@@ -10,7 +10,7 @@ const EditTreatmentForm = () => {
     const navigate=useNavigate();
     useEffect(()=>{
         axios
-        .get(`http://localhost:4000/treatment/${tid}`)
+        .get(`https://project1server-3.onrender.com/treatment/${tid}`)
         .then((res)=>{
             setTname(res.data.tname);
             setTdesc(res.data.tdesc);
@@ -22,7 +22,7 @@ const EditTreatmentForm = () => {
     const updateTreatment=(e)=>{
         e.preventDefault();
         axios
-        .put(`http://localhost:4000/treatment/${tid}`,{tname,tdesc})
+        .put(`https://project1server-3.onrender.com/treatment/${tid}`,{tname,tdesc})
         .then((res)=>{
             alert("Treatment Edited Successfully");
             navigate("/admindashboard/editdeletetreatment")
