@@ -13,7 +13,7 @@ const Register = () => {
     
     const addStudent=(e)=>{
         e.preventDefault();
-        axios.post("http://localhost:4000/signup/",{name,phone,email,password,address})
+        axios.post("https://project1server-3.onrender.com/signup/",{name,phone,email,password,address})
         .then((res)=>{
             alert("user added successfully");
             navigate("/admin");
