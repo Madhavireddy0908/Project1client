@@ -9,7 +9,7 @@ import $ from "jquery";
 const EditDeleteOffer = () => {
   const [data, setData] = useState([]);
   useEffect(()=>{
-    axios.get("http://localhost:4000/offer/")
+    axios.get("https://project1server-3.onrender.com/offer/")
     .then((res)=>{
       setData(res.data);
     })
@@ -23,7 +23,7 @@ const EditDeleteOffer = () => {
     });    
   })
   const deleteOffer = (oid)=>{
-    axios.delete(`http://localhost:4000/offer/${oid}`)
+    axios.delete(`https://project1server-3.onrender.com/offer/${oid}`)
     .then((res)=>{
       alert("Offer deleted succ...")
     })
