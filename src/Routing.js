@@ -56,15 +56,6 @@ const Routing = () => {
             <Route path="editappointmentform/:aid" element={<EditAppointmentForm/>}/>
             <Route path="editenquiryform/:eid" element={<EditEnquiryForm/>}/>
             <Route path='*' element={<NoPage/>} />
-
-            {/*}<Route path='/addstudent' element={<AddStudent/>} />
-            <Route path='/studentdata' element={<StudentData/>} />
-            <Route path='/deletestudent' element={<DeleteStudent/>} />
-            <Route path='/editstudent/:id' element={<EditStudent/>} />
-            <Route path='/addemp' element={<AddEmployee/>} />
-            <Route path='/employeedata' element={<EmployeeData/>} />
-            <Route path='/deleteemployee' element={<DeleteEmployee/>} />
-            <Route path='/editemployee/:id' element={<EditEmployee/>} />*/}
         </Routes>
     </>
   )
