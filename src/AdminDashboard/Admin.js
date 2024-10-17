@@ -11,7 +11,7 @@ const Admin = () => {
     let navigate = useNavigate();
     const submitHandler = (e)=>{
         e.preventDefault();
-        axios.post("http://localhost:4000/signup/login",{email,password})
+        axios.post("https://project1server-3.onrender.com/signup/login",{email,password})
         .then((res)=>{
             setToken(res.data.token);
         })
