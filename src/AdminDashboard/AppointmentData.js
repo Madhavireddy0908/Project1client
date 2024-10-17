@@ -9,7 +9,7 @@ const AppointmentData = () => {
   const[adata,setAdata]=useState([]);
   useEffect(()=>{
       axios
-      .get('http://localhost:4000/appointment')
+      .get('https://project1server-3.onrender.com/appointment')
       .then((res)=>{
           setAdata(res.data);
       })
