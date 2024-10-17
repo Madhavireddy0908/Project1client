@@ -14,7 +14,7 @@ const BookAppointment = () => {
   const [msg,setMsg]=useState("");
   const addAppointment=(e)=>{
       e.preventDefault();
-      axios.post('http://localhost:4000/appointment',{tname,pname,dname,sub,date,time,email,phone,msg})
+      axios.post('https://project1server-3.onrender.com/appointment',{tname,pname,dname,sub,date,time,email,phone,msg})
       .then((res)=>{
           alert("Appointment added Successfully")
           setTname("");
