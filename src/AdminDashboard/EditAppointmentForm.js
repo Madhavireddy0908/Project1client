@@ -17,7 +17,7 @@ const EditAppointmentForm = () => {
   const navigate=useNavigate();
   useEffect(()=>{
       axios
-      .get(`http://localhost:4000/appointment/${aid}`)
+      .get(`https://project1server-3.onrender.com/appointment/${aid}`)
       .then((res)=>{
           setTname(res.data.tname);
           setPname(res.data.pname);
@@ -36,7 +36,7 @@ const EditAppointmentForm = () => {
   const updateAppointment=(e)=>{
       e.preventDefault();
       axios
-      .put(`http://localhost:4000/appointment/${aid}`,{tname,pname,dname,sub,date,time,email,phone,msg})
+      .put(`https://project1server-3.onrender.com/appointment/${aid}`,{tname,pname,dname,sub,date,time,email,phone,msg})
       .then((res)=>{
           alert("Appointment Edited Successfully");
           navigate("/admindashboard/editdeleteappointment")
