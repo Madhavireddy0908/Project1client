@@ -139,7 +139,7 @@ const Home = () => {
                     return(
                       <div className='col-md-3'>
                         <div className={innerStyles.ourbox}>
-                          <NavLink to={`/treatmentdetails/${tdata._id}`}>
+                          <NavLink to={`/treatmentdetails/${tdata.tname}`}>
                             <h1 key={tdata._id}>{tdata.tname}</h1>
                           </NavLink>
                         </div>

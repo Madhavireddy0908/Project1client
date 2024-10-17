@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import innerStyles from "./innerpages.module.css";
+import { NavLink, useParams } from 'react-router-dom';
 
 const TreatmentDetails = () => {
-  const[treat,setTreat]=useState([]);
+  const[treat,setTreat]=useState("");
+  const[doc,setDoc]=useState("");
+  const {tname} = useParams();
   useEffect(()=>{
       axios
-      .get(`http://localhost:4000/treatment`)
+      .get(`http://localhost:4000/treatment/${tname}`)
       .then((res)=>{
-          setTreat(res.data);
+        setTreat(res.data.tdesc);
       })
       .catch((err)=>{
-          console.log(err);
+        console.log(err);
       })
-  })  
-  const[doctor,setDoctor]=useState([]);
-  useEffect(()=>{
       axios
-      .get(`http://localhost:4000/doctor`)
+      .get(`http://localhost:4000/doctor/${tname}`)
       .then((res)=>{
-          setDoctor(res.data);
+        setDoc(res.data);
       })
       .catch((err)=>{
-          console.log(err);
+        console.log(err);
       })
   })  
 
@@ -32,38 +32,33 @@ const TreatmentDetails = () => {
         <div className='container'>
           <div className='row'>
             <div className='col-md-12'>
-              <h1>Treatment Details</h1>
+              <h1>{tname}</h1>
             </div>
           </div>
         </div>
       </section>
-      <section>
+      <section className={innerStyles.des}>
         <div className='container'>
           <div className='row'>
-            <div className='col-md-12'>
-              {
-                treat.map((tdata)=>{
-                  return(
-                    <div>
-                      <h2 key={tdata._id}>{tdata.tname}</h2>
-                      <p>{tdata.tdesc}</p>
-                    </div>
-                  )
-                })
-              }
-              {
-                doctor.map((data)=>{
-                  return(
-                    <div className='my-3'>
-                      <h3 key={data._id}>{data.tname}</h3>
-                      {data.dname}<br/>
-                      {data.dqual}<br/>
-                      {data.yoe}<br/>
-                      {data.hos}<br/>
-                    </div>
-                  )
-                })
-              }
+            <div className='col-md-12 py-3'>
+              <p>{treat}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className={innerStyles.doct}>
+        <div className='container'>
+          <div className='row'>
+            <div className="col-md-3">
+              <h2 className='m-0 py-2' key={doc._id}>{doc.dname}</h2>
+              <p className='m-0 py-1'>{doc.dqual}</p>
+              <p className='m-0 py-1'>{doc.yoe}</p>
+              <p className='m-0 py-1 mb-3'>{doc.hos}</p>
+            </div>
+            <div className='col-md-2'>
+              <NavLink to={"/bookappointment"}>
+                <button className='btn btn-danger mt-5'>Book Appointment</button>
+              </NavLink>
             </div>
           </div>
         </div>

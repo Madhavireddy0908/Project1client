@@ -26,15 +26,6 @@ import AddDoctor from './AdminDashboard/AddDoctor';
 import EditDeleteDoctor from './AdminDashboard/EditDeleteDoctor';
 import EditDoctorForm from './AdminDashboard/EditDoctorForm';
 
-/*import AddStudent from './InnerPages/AddStudent';
-import StudentData from './InnerPages/StudentData';
-import DeleteStudent from './InnerPages/DeleteStudent';
-import EditStudent from './InnerPages/EditStudent';
-import AddEmployee from './InnerPages/AddEmployee';
-import EmployeeData from './InnerPages/EmployeeData';
-import DeleteEmployee from './InnerPages/DeleteEmployee';
-import EditEmployee from './InnerPages/EditEmployee';*/
-
 const Routing = () => {
   return (
     <>
@@ -42,7 +33,7 @@ const Routing = () => {
             <Route path='/' element={<Home/>} />
             <Route path='/aboutus' element={<AboutUs/>} />
             <Route path='/treatments' element={<Treatments/>} />
-            <Route path='/treatmentdetails/:id' element={<TreatmentDetails/>} />
+            <Route path='/treatmentdetails/:tname' element={<TreatmentDetails/>} />
             <Route path='/bookappointment' element={<BookAppointment/>} />
             <Route path='/contactus' element={<ContactUs/>} />
             <Route path='/admin' element={<Admin/>}/>

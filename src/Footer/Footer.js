@@ -5,7 +5,6 @@ import { Icon } from "semantic-ui-react";
 
 const Footer = () => {
   return (
-    <div>
     <footer className={footerStyles.footer}>
         <div className={footerStyles.tfooter}>
           <div className={footerStyles.foot}>
@@ -88,7 +87,6 @@ const Footer = () => {
             </div>
         </div>
     </footer>
-    </div>
   )
 }
 

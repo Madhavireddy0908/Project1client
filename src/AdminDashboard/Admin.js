@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import adminStyles from "./admin.module.css";
 import { NavLink, useNavigate } from 'react-router-dom';
 import axios from "axios";
+import { Store } from '../App';
 
 const Admin = () => {
+    const [token,setToken] = useContext(Store);
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
     let navigate = useNavigate();
@@ -11,19 +13,14 @@ const Admin = () => {
         e.preventDefault();
         axios.post("http://localhost:4000/signup/login",{email,password})
         .then((res)=>{
-        if(res.data === "user not found"){
-            alert("Invalid Username");
-        }
-        else if(res.data === "Valid"){
-            navigate("/admindashboard");
-        }
-        else{
-            alert("Invalid Password");
-        }
+            setToken(res.data.token);
         })
         .catch((err)=>{
             console.log(err);
         })
+    };
+    if(token){
+        navigate("/admindashboard");
     }
   return (
     <>
