@@ -13,7 +13,7 @@ const EditDoctorForm = () => {
     const navigate=useNavigate();
     useEffect(()=>{
         axios
-        .get(`http://localhost:4000/doctor/${did}`)
+        .get(`https://project1server-3.onrender.com/doctor/${did}`)
         .then((res)=>{
             setTname(res.data.tname);
             setDname(res.data.dname);
@@ -28,7 +28,7 @@ const EditDoctorForm = () => {
     const updateDoctor=(e)=>{
         e.preventDefault();
         axios
-        .put(`http://localhost:4000/doctor/${did}`,{tname,dname,dqual,yoe,hos})
+        .put(`https://project1server-3.onrender.com/doctor/${did}`,{tname,dname,dqual,yoe,hos})
         .then((res)=>{
             alert("Doctor Edited Successfully");
             navigate("/admindashboard/editdeletedoctor")
