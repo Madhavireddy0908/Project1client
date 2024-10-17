@@ -75,7 +75,7 @@ const ContactUs = () => {
         }
     }
 
-      axios.post('http://localhost:4000/enquiry',{uname,phone,email,sub,msg})
+      axios.post('https://project1server-3.onrender.com/enquiry',{uname,phone,email,sub,msg})
       .then((res)=>{
           alert("Appointment added Successfully")
           setUname("");
