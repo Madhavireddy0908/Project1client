@@ -7,7 +7,7 @@ const AddTreatment = () => {
   const [tdesc,setTdesc] = useState("");
   const addTreatment = (e) =>{
     e.preventDefault();
-    axios.post("http://localhost:4000/treatment/",{tname,tdesc})
+    axios.post("https://project1server-3.onrender.com/treatment/",{tname,tdesc})
     .then((res)=>{
         alert("Treatment added successfully");
         setTname("");
