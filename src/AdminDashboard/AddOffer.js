@@ -7,7 +7,7 @@ const AddOffer = () => {
   const [oprice,setOprice] = useState("");
   const addOffer = (e) =>{
     e.preventDefault();
-    axios.post("http://localhost:4000/offer/",{oname,oprice})
+    axios.post("https://project1server-3.onrender.com/offer/",{oname,oprice})
     .then((res)=>{
         alert("Offer added successfully");
         setOname("");
