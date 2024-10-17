@@ -10,7 +10,7 @@ const AddDoctor = () => {
   const [hos,setHos] = useState("");
   const addDoctor = (e) =>{
     e.preventDefault();
-    axios.post("http://localhost:4000/doctor/",{tname,dname,dqual,yoe,hos})
+    axios.post("https://project1server-3.onrender.com/doctor/",{tname,dname,dqual,yoe,hos})
     .then((res)=>{
         alert("Doctor added successfully");
         setTname("");
