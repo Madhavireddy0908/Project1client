@@ -10,7 +10,7 @@ const EditOfferForm = () => {
     const navigate=useNavigate();
     useEffect(()=>{
         axios
-        .get(`http://localhost:4000/offer/${oid}`)
+        .get(`https://project1server-3.onrender.com/offer/${oid}`)
         .then((res)=>{
             setOname(res.data.oname);
             setOprice(res.data.oprice);
@@ -22,7 +22,7 @@ const EditOfferForm = () => {
     const updateOffer=(e)=>{
         e.preventDefault();
         axios
-        .put(`http://localhost:4000/offer/${oid}`,{oname,oprice})
+        .put(`https://project1server-3.onrender.com/offer/${oid}`,{oname,oprice})
         .then((res)=>{
             alert("Offer Edited Successfully");
             navigate("/admindashboard/editdeleteoffer")
