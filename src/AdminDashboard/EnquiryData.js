@@ -9,7 +9,7 @@ const EnquiryData = () => {
   const[edata,setEdata]=useState([]);
   useEffect(()=>{
       axios
-      .get('http://localhost:4000/enquiry')
+      .get('https://project1server-3.onrender.com/enquiry')
       .then((res)=>{
           setEdata(res.data);
       })
