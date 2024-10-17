@@ -10,7 +10,7 @@ const Home = () => {
   const[treat,setTreat]=useState([]);
   useEffect(()=>{
       axios
-      .get('http://localhost:4000/treatment')
+      .get('https://project1server-3.onrender.com/treatment')
       .then((res)=>{
           setTreat(res.data);
       })
@@ -20,7 +20,7 @@ const Home = () => {
   })
   const [offer,setOffer]=useState([]);
   useEffect(()=>{
-      axios.get('http://localhost:4000/offer')
+      axios.get('https://project1server-3.onrender.com/offer')
       .then((res)=>{
           setOffer(res.data);
       })
@@ -39,7 +39,7 @@ const Home = () => {
   const [msg,setMsg]=useState("");
   const addAppointment=(e)=>{
       e.preventDefault();
-      axios.post('http://localhost:4000/appointment',{tname,pname,dname,sub,date,time,email,phone,msg})
+      axios.post('https://project1server-3.onrender.com/appointment',{tname,pname,dname,sub,date,time,email,phone,msg})
       .then((res)=>{
           alert("Appointment added Successfully")
           setTname("");
