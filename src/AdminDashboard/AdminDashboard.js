@@ -10,7 +10,7 @@ const AdminDashboard = () => {
     const [data,setData] = useState("");
     const navigate = useNavigate();
     useEffect(()=>{
-        axios.get("http://localhost:4000/signup/admindashboard",{
+        axios.get("https://project1server-3.onrender.com/signup/admindashboard",{
         headers:{
             "x-token": token
         }
