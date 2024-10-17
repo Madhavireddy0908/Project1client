@@ -13,7 +13,7 @@ const EditEnquiryForm = () => {
   const navigate=useNavigate();
   useEffect(()=>{
       axios
-      .get(`http://localhost:4000/enquiry/${eid}`)
+      .get(`https://project1server-3.onrender.com/enquiry/${eid}`)
       .then((res)=>{
           setUname(res.data.uname);
           setPhone(res.data.phone);
@@ -28,7 +28,7 @@ const EditEnquiryForm = () => {
   const updateEnquiry=(e)=>{
       e.preventDefault();
       axios
-      .put(`http://localhost:4000/enquiry/${eid}`,{uname,phone,email,sub,msg})
+      .put(`https://project1server-3.onrender.com/enquiry/${eid}`,{uname,phone,email,sub,msg})
       .then((res)=>{
           alert("Enquiry Edited Successfully");
           navigate("/admindashboard/editdeleteenquiry")
